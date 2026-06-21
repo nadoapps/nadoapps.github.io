@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobil Uygulama Geliştirme Stüdyosu</title>
+    <title>Nadir Apps - Mobile App Development Studio</title>
     <style>
-        /* Modern Minimalist CSS Temelleri */
+        /* Modern Minimalist CSS Foundations */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -24,7 +24,7 @@
             position: relative;
         }
 
-        /* Arka Plan Glow Efektleri */
+        /* Background Glow Effects */
         .gradient-glow {
             position: absolute;
             width: 600px;
@@ -47,7 +47,7 @@
             pointer-events: none;
         }
 
-        /* İçerik Konteyneri */
+        /* Content Container */
         .container {
             max-width: 1200px;
             width: 100%;
@@ -72,7 +72,7 @@
             display: inline-block;
         }
 
-        /* Ana İçerik (Hero Section) */
+        /* Main Content (Hero Section) */
         main {
             display: flex;
             flex-direction: column;
@@ -82,7 +82,7 @@
             margin: 40px 0;
         }
 
-        /* Tek Satır / Single Line Vurgusu */
+        /* Single Line / Tagline Vibe */
         .tagline {
             display: inline-flex;
             align-items: center;
@@ -130,7 +130,7 @@
             margin-bottom: 40px;
         }
 
-        /* Platform İkonları / Badge'ler */
+        /* Platform Badges */
         .platforms {
             display: flex;
             gap: 16px;
@@ -162,7 +162,7 @@
             fill: currentColor;
         }
 
-        /* İletişim Butonu */
+        /* Contact Button */
         .cta-button {
             display: inline-flex;
             align-items: center;
@@ -217,7 +217,7 @@
             color: #a5b4fc;
         }
 
-        /* Mobil Uyumluluk */
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
@@ -246,22 +246,20 @@
     <div class="gradient-glow-2"></div>
 
     <div class="container">
-        <!-- Header -->
         <header>
-            <div class="logo">APPSTUDIO</div>
+            <div class="logo">NADIR APPS</div>
         </header>
 
-        <!-- Main Content -->
         <main>
             <div class="tagline">
                 <span class="tagline-dot"></span>
-                <span>iOS & Android için Canlıda</span>
+                <span>Live on iOS & Android</span>
             </div>
             
-            <h1>Fikirleri Kusursuz <span>Mobil Deneyimlere</span> Dönüştürüyoruz.</h1>
+            <h1>Crafting Exceptional <span>Mobile Experiences</span>.</h1>
             
             <p class="description">
-                Geleceğin teknolojilerini bugünden inşa ediyoruz. iOS ve Android platformları için modern, yüksek performanslı, kullanıcı odaklı ve ölçeklenebilir mobil uygulamalar geliştiriyoruz. Kusursuz kod mimarisi ve estetik tasarımla işinizi mobil dünyaya taşıyoruz.
+                We design and build high-performance, beautiful, and user-centric mobile applications for iOS and Android. Combining robust engineering with modern interface design to bring digital ideas into the palms of users worldwide.
             </p>
 
             <div class="platforms">
@@ -279,8 +277,8 @@
                 </div>
             </div>
 
-            <a href="mailto:hello@yourstudio.com" class="cta-button">
-                Bizimle İletişime Geçin
+            <a href="mailto:nadoappsupport@gmail.com" class="cta-button">
+                Get In Touch
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3.33334 8H12.6667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M8 3.33334L12.6667 8L8 12.6667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -288,28 +286,25 @@
             </a>
         </main>
 
-        <!-- Footer -->
         <footer>
             <div class="copyright">
-                &copy; 2026 AppStudio. Tüm hakları saklıdır.
+                &copy; 2026 Nadir Apps. All rights reserved.
             </div>
             <div class="footer-links">
-                <a href="#privacy" onclick="alert('Gizlilik Politikası Sayfası - Burayı kendi metninizle doldurabilirsiniz.')">Privacy Policy</a>
-                <a href="#terms" onclick="alert('Kullanım Şartları Sayfası - Burayı kendi metninizle doldurabilirsiniz.')">Terms of Service</a>
-                <a href="mailto:hello@yourstudio.com">hello@yourstudio.com</a>
+                <a href="#privacy" onclick="alert('Privacy Policy Page - You can replace this popup with your own content link.')">Privacy Policy</a>
+                <a href="#terms" onclick="alert('Terms of Service Page - You can replace this popup with your own content link.')">Terms of Service</a>
+                <a href="mailto:nadoappsupport@gmail.com">nadoappsupport@gmail.com</a>
             </div>
         </footer>
     </div>
 
-    <!-- JavaScript -->
     <script>
-        // Modern etkileşimler ve tıklandığında loglama simülasyonu
+        // Analytics simulation
         function trackPlatform(platform) {
-            console.log(platform + " platformu incelendi.");
-            // İleride buraya analitik kodları (Google Analytics vb.) eklenebilir.
+            console.log(platform + " platform section viewed.");
         }
 
-        // Sayfa yüklendiğinde ufak bir giriş animasyonu tetiklenebilir
+        // Fade-in animation on load
         document.addEventListener('DOMContentLoaded', () => {
             const mainContent = document.querySelector('main');
             mainContent.style.opacity = '0';
