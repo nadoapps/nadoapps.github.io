@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nadir Apps — Independent app studio</title>
+<meta name="description" content="Nadir Apps is an independent studio designing and shipping consumer apps for iOS and Android." />
+<meta name="color-scheme" content="dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --panel: #0f0f11;
+    --ink: #ededee;
+    --body: #9a9aa2;
+    --faint: #5c5c64;
+    --line: rgba(255,255,255,0.085);
+    --line-strong: rgba(255,255,255,0.16);
+    --accent: #bdb4ff;
+    --maxw: 1160px;
+    --pad: clamp(22px, 5vw, 56px);
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --disp: "Space Grotesk", system-ui, sans-serif;
+    --sans: "Inter", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+  }
+  /* film grain — kills the flat AI-render look */
+  body::after {
+    content: "";
+    position: fixed; inset: 0; z-index: 100; pointer-events: none;
+    opacity: .035; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); }
+
+  .bound { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--pad); }
+
+  /* ---------- header ---------- */
+  header {
+    position: sticky; top: 0; z-index: 60;
+    background: color-mix(in srgb, var(--bg) 80%, transparent);
+    backdrop-filter: saturate(150%) blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+  .brand { display: inline-flex; align-items: center; gap: 11px; }
+  .brand svg { width: 22px; height: 22px; display: block; }
+  .brand b { font-family: var(--disp); font-weight: 600; font-size: 16px; letter-spacing: -0.01em; }
+  .nav nav { display: flex; align-items: center; gap: 34px; }
+  .nav nav a { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--body); transition: color .18s; }
+  .nav nav a:hover { color: var(--ink); }
+  @media (max-width: 660px){ .nav nav a.hide-sm { display: none; } }
+
+  /* ---------- hero ---------- */
+  .hero { padding: clamp(72px, 12vw, 150px) 0 clamp(48px, 7vw, 88px); border-bottom: 1px solid var(--line); }
+  .hero .tag { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 30px; }
+  .hero .tag .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+  h1 {
+    font-family: var(--disp); font-weight: 500;
+    font-size: clamp(40px, 7.4vw, 88px); line-height: 1.0;
+    letter-spacing: -0.035em; max-width: 16ch;
+  }
+  h1 em { font-style: normal; color: var(--faint); }
+  .lede { margin-top: 28px; max-width: 52ch; font-size: clamp(16px, 2.1vw, 19px); color: var(--body); }
+  .actions { margin-top: 40px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase;
+    padding: 13px 20px; border-radius: 4px; transition: transform .18s, background .2s, border-color .2s, color .2s;
+  }
+  .btn .arr { transition: transform .2s; }
+  .btn:hover .arr { transform: translateX(3px); }
+  .btn-solid { background: var(--ink); color: var(--bg); }
+  .btn-solid:hover { transform: translateY(-1px); }
+  .btn-line { border: 1px solid var(--line-strong); color: var(--ink); }
+  .btn-line:hover { border-color: var(--ink); transform: translateY(-1px); }
+
+  /* metadata strip */
+  .meta { margin-top: clamp(48px, 7vw, 84px); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .meta div { background: var(--bg); padding: 20px clamp(16px, 2vw, 24px); }
+  .meta dt { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+  .meta dd { margin-top: 8px; font-family: var(--disp); font-size: clamp(15px, 2vw, 18px); color: var(--ink); letter-spacing: -0.01em; }
+  @media (max-width: 720px){ .meta { grid-template-columns: repeat(2, 1fr); } }
+
+  /* ---------- section frame ---------- */
+  .sec { padding: clamp(64px, 9vw, 120px) 0; border-bottom: 1px solid var(--line); }
+  .sec-head { display: grid; grid-template-columns: 200px 1fr; gap: clamp(20px, 4vw, 60px); }
+  @media (max-width: 760px){ .sec-head { grid-template-columns: 1fr; gap: 16px; } }
+  .sec-head h2 { font-family: var(--disp); font-weight: 500; font-size: clamp(26px, 3.8vw, 40px); letter-spacing: -0.025em; line-height: 1.1; max-width: 20ch; }
+  .sec-head p { margin-top: 18px; color: var(--body); max-width: 50ch; font-size: clamp(15px, 1.9vw, 17px); }
+
+  /* process list */
+  .rows { margin-top: clamp(40px, 6vw, 72px); border-top: 1px solid var(--line); }
+  .row {
+    display: grid; grid-template-columns: 60px 1fr 1.4fr; gap: clamp(16px, 3vw, 40px);
+    align-items: baseline; padding: 26px 8px; border-bottom: 1px solid var(--line);
+    transition: padding-left .25s ease, background .25s;
+  }
+  .row:hover { padding-left: 18px; background: rgba(255,255,255,0.015); }
+  .row .num { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: .05em; }
+  .row .t { font-family: var(--disp); font-weight: 500; font-size: clamp(18px, 2.4vw, 24px); letter-spacing: -0.015em; }
+  .row .d { color: var(--body); font-size: 15px; }
+  @media (max-width: 680px){
+    .row { grid-template-columns: 40px 1fr; }
+    .row .d { grid-column: 2; }
+  }
+
+  /* ---------- contact ---------- */
+  .contact { padding: clamp(72px, 11vw, 150px) 0; border-bottom: 1px solid var(--line); }
+  .contact .mono { display: block; margin-bottom: 22px; }
+  .mailto {
+    display: inline-block; font-family: var(--disp); font-weight: 500;
+    font-size: clamp(28px, 6.5vw, 64px); letter-spacing: -0.03em; line-height: 1.05;
+    background-image: linear-gradient(var(--line-strong), var(--line-strong));
+    background-size: 100% 1px; background-position: 0 100%; background-repeat: no-repeat;
+    transition: background-size .3s ease, color .2s;
+    word-break: break-word;
+  }
+  .mailto:hover { color: var(--accent); }
+  .contact .note { margin-top: 26px; color: var(--body); max-width: 46ch; }
+
+  /* ---------- footer ---------- */
+  footer { padding: 40px 0 56px; }
+  .foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .foot .left { display: flex; flex-direction: column; gap: 8px; }
+  .foot .left .mono { color: var(--faint); }
+  .foot-links { display: flex; gap: 26px; }
+  .foot-links a { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--body); transition: color .18s; }
+  .foot-links a:hover { color: var(--ink); }
+
+  :focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
+
+  /* reveal */
+  [data-rise] { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  [data-rise].in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce){
+    html { scroll-behavior: auto; }
+    [data-rise] { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="nav bound">
+      <a class="brand" href="#top" aria-label="Nadir Apps">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <path d="M8 16.5V7.5L16 16.5V7.5"/>
+        </svg>
+        <b>Nadir Apps</b>
+      </a>
+      <nav>
+        <a class="hide-sm" href="#work">Work</a>
+        <a class="hide-sm" href="privacy.html">Privacy</a>
+        <a class="hide-sm" href="terms.html">Terms</a>
+        <a href="mailto:nadoappsupport@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero bound">
+      <span class="tag"><span class="dot"></span><span class="mono">Independent app studio</span></span>
+      <h1>We build mobile apps, <em>independently.</em></h1>
+      <p class="lede">Nadir Apps is a small studio designing and shipping original consumer apps for iOS and Android.</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="mailto:nadoappsupport@gmail.com">Get in touch <span class="arr">→</span></a>
+        <a class="btn btn-line" href="#work">How we work</a>
+      </div>
+
+      <dl class="meta" data-rise>
+        <div><dt>Platforms</dt><dd>iOS &amp; Android</dd></div>
+        <div><dt>Discipline</dt><dd>Design &amp; Build</dd></div>
+        <div><dt>Focus</dt><dd>Consumer apps</dd></div>
+        <div><dt>Model</dt><dd>In-house</dd></div>
+      </dl>
+    </section>
+
+    <section id="work" class="sec bound">
+      <div class="sec-head" data-rise>
+        <span class="mono">01 — How we work</span>
+        <div>
+          <h2>From the first sketch to a shipped product — and every release after.</h2>
+          <p>We keep teams small and the surface area focused, so each app stays sharp instead of sprawling.</p>
+        </div>
+      </div>
+
+      <div class="rows">
+        <div class="row" data-rise>
+          <span class="num">/01</span>
+          <span class="t">Design</span>
+          <span class="d">Product and interface design, from concept and flows to the final pixels.</span>
+        </div>
+        <div class="row" data-rise>
+          <span class="num">/02</span>
+          <span class="t">Build</span>
+          <span class="d">Native iOS and Android development with a backend that holds up at scale.</span>
+        </div>
+        <div class="row" data-rise>
+          <span class="num">/03</span>
+          <span class="t">Release</span>
+          <span class="d">Shipping to the App Store and Google Play, then iterating on what we learn.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact bound" id="contact">
+      <span class="mono">02 — Contact</span>
+      <a class="mailto" href="mailto:nadoappsupport@gmail.com">nadoappsupport@gmail.com</a>
+      <p class="note">For app support, feedback, or anything else — write to us and we'll get back to you.</p>
+    </section>
+  </main>
+
+  <footer class="bound">
+    <div class="foot">
+      <div class="left">
+        <a class="brand" href="#top" aria-label="Nadir Apps">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="20" height="20">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <path d="M8 16.5V7.5L16 16.5V7.5"/>
+          </svg>
+          <b style="font-family:var(--disp);font-weight:600;font-size:15px;">Nadir Apps</b>
+        </a>
+        <span class="mono">© <span id="year"></span> — All rights reserved</span>
+      </div>
+      <div class="foot-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:nadoappsupport@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const io = new IntersectionObserver((es) => {
+      es.forEach((e, i) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll("[data-rise]").forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
