@@ -3,259 +3,187 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nadir Apps — Independent app studio</title>
-<meta name="description" content="Nadir Apps is an independent studio designing and shipping consumer apps for iOS and Android." />
+<title>Privacy Policy - HeyBaby</title>
 <meta name="color-scheme" content="dark" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root {
     --bg: #0a0a0b;
-    --panel: #0f0f11;
     --ink: #ededee;
-    --body: #9a9aa2;
+    --body: #b4b4bc;
     --faint: #5c5c64;
     --line: rgba(255,255,255,0.085);
     --line-strong: rgba(255,255,255,0.16);
     --accent: #bdb4ff;
-    --maxw: 1160px;
+    --maxw: 760px;
     --pad: clamp(22px, 5vw, 56px);
     --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
     --disp: "Space Grotesk", system-ui, sans-serif;
     --sans: "Inter", system-ui, sans-serif;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-
   body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--sans);
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background: var(--bg); color: var(--body);
+    font-family: var(--sans); line-height: 1.7;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
     position: relative;
   }
-  /* film grain — kills the flat AI-render look */
   body::after {
-    content: "";
-    position: fixed; inset: 0; z-index: 100; pointer-events: none;
+    content: ""; position: fixed; inset: 0; z-index: 100; pointer-events: none;
     opacity: .035; mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
-
-  a { color: inherit; text-decoration: none; }
-
-  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); }
-
+  a { color: inherit; }
   .bound { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--pad); }
 
-  /* ---------- header ---------- */
   header {
     position: sticky; top: 0; z-index: 60;
     background: color-mix(in srgb, var(--bg) 80%, transparent);
     backdrop-filter: saturate(150%) blur(14px);
     border-bottom: 1px solid var(--line);
   }
-  .nav { display: flex; align-items: center; justify-content: space-between; height: 66px; }
-  .brand { display: inline-flex; align-items: center; gap: 11px; }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 66px; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--pad); }
+  .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; color: var(--ink); }
   .brand svg { width: 22px; height: 22px; display: block; }
   .brand b { font-family: var(--disp); font-weight: 600; font-size: 16px; letter-spacing: -0.01em; }
-  .nav nav { display: flex; align-items: center; gap: 34px; }
-  .nav nav a { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--body); transition: color .18s; }
-  .nav nav a:hover { color: var(--ink); }
-  @media (max-width: 660px){ .nav nav a.hide-sm { display: none; } }
+  .nav a.back { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--body); text-decoration: none; transition: color .18s; }
+  .nav a.back:hover { color: var(--ink); }
 
-  /* ---------- hero ---------- */
-  .hero { padding: clamp(72px, 12vw, 150px) 0 clamp(48px, 7vw, 88px); border-bottom: 1px solid var(--line); }
-  .hero .tag { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 30px; }
-  .hero .tag .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
-  h1 {
-    font-family: var(--disp); font-weight: 500;
-    font-size: clamp(40px, 7.4vw, 88px); line-height: 1.0;
-    letter-spacing: -0.035em; max-width: 16ch;
-  }
-  h1 em { font-style: normal; color: var(--faint); }
-  .lede { margin-top: 28px; max-width: 52ch; font-size: clamp(16px, 2.1vw, 19px); color: var(--body); }
-  .actions { margin-top: 40px; display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-family: var(--mono); font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase;
-    padding: 13px 20px; border-radius: 4px; transition: transform .18s, background .2s, border-color .2s, color .2s;
-  }
-  .btn .arr { transition: transform .2s; }
-  .btn:hover .arr { transform: translateX(3px); }
-  .btn-solid { background: var(--ink); color: var(--bg); }
-  .btn-solid:hover { transform: translateY(-1px); }
-  .btn-line { border: 1px solid var(--line-strong); color: var(--ink); }
-  .btn-line:hover { border-color: var(--ink); transform: translateY(-1px); }
+  .doc { padding: clamp(52px, 8vw, 96px) 0 clamp(72px, 10vw, 120px); }
+  .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+  h1 { font-family: var(--disp); font-weight: 500; color: var(--ink); font-size: clamp(32px, 6vw, 52px); letter-spacing: -0.03em; line-height: 1.05; margin: 18px 0 14px; }
+  .updated { font-family: var(--mono); font-size: 12.5px; letter-spacing: .04em; color: var(--faint); padding-bottom: 28px; margin-bottom: 36px; border-bottom: 1px solid var(--line); }
 
-  /* metadata strip */
-  .meta { margin-top: clamp(48px, 7vw, 84px); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
-  .meta div { background: var(--bg); padding: 20px clamp(16px, 2vw, 24px); }
-  .meta dt { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
-  .meta dd { margin-top: 8px; font-family: var(--disp); font-size: clamp(15px, 2vw, 18px); color: var(--ink); letter-spacing: -0.01em; }
-  @media (max-width: 720px){ .meta { grid-template-columns: repeat(2, 1fr); } }
+  .doc p { margin: 18px 0; font-size: 16px; }
+  .doc h2 { font-family: var(--disp); font-weight: 500; color: var(--ink); font-size: clamp(21px, 3vw, 27px); letter-spacing: -0.02em; margin: 48px 0 4px; }
+  .doc h3 { font-family: var(--disp); font-weight: 500; color: var(--ink); font-size: clamp(17px, 2.3vw, 20px); letter-spacing: -0.01em; margin: 30px 0 2px; }
+  .doc ul { margin: 16px 0 16px; padding-left: 0; list-style: none; }
+  .doc li { position: relative; padding-left: 24px; margin: 11px 0; font-size: 16px; }
+  .doc li::before { content: ""; position: absolute; left: 4px; top: 12px; width: 6px; height: 1px; background: var(--line-strong); }
+  .doc strong { color: var(--ink); font-weight: 600; }
+  .doc a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+  .doc a:hover { border-color: var(--accent); }
+  .contact-block { margin-top: 14px; padding: 22px 24px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.015); }
+  .contact-block strong { display: block; font-family: var(--disp); font-size: 17px; margin-bottom: 4px; }
 
-  /* ---------- section frame ---------- */
-  .sec { padding: clamp(64px, 9vw, 120px) 0; border-bottom: 1px solid var(--line); }
-  .sec-head { display: grid; grid-template-columns: 200px 1fr; gap: clamp(20px, 4vw, 60px); }
-  @media (max-width: 760px){ .sec-head { grid-template-columns: 1fr; gap: 16px; } }
-  .sec-head h2 { font-family: var(--disp); font-weight: 500; font-size: clamp(26px, 3.8vw, 40px); letter-spacing: -0.025em; line-height: 1.1; max-width: 20ch; }
-  .sec-head p { margin-top: 18px; color: var(--body); max-width: 50ch; font-size: clamp(15px, 1.9vw, 17px); }
-
-  /* process list */
-  .rows { margin-top: clamp(40px, 6vw, 72px); border-top: 1px solid var(--line); }
-  .row {
-    display: grid; grid-template-columns: 60px 1fr 1.4fr; gap: clamp(16px, 3vw, 40px);
-    align-items: baseline; padding: 26px 8px; border-bottom: 1px solid var(--line);
-    transition: padding-left .25s ease, background .25s;
-  }
-  .row:hover { padding-left: 18px; background: rgba(255,255,255,0.015); }
-  .row .num { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: .05em; }
-  .row .t { font-family: var(--disp); font-weight: 500; font-size: clamp(18px, 2.4vw, 24px); letter-spacing: -0.015em; }
-  .row .d { color: var(--body); font-size: 15px; }
-  @media (max-width: 680px){
-    .row { grid-template-columns: 40px 1fr; }
-    .row .d { grid-column: 2; }
-  }
-
-  /* ---------- contact ---------- */
-  .contact { padding: clamp(72px, 11vw, 150px) 0; border-bottom: 1px solid var(--line); }
-  .contact .mono { display: block; margin-bottom: 22px; }
-  .mailto {
-    display: inline-block; font-family: var(--disp); font-weight: 500;
-    font-size: clamp(28px, 6.5vw, 64px); letter-spacing: -0.03em; line-height: 1.05;
-    background-image: linear-gradient(var(--line-strong), var(--line-strong));
-    background-size: 100% 1px; background-position: 0 100%; background-repeat: no-repeat;
-    transition: background-size .3s ease, color .2s;
-    word-break: break-word;
-  }
-  .mailto:hover { color: var(--accent); }
-  .contact .note { margin-top: 26px; color: var(--body); max-width: 46ch; }
-
-  /* ---------- footer ---------- */
-  footer { padding: 40px 0 56px; }
-  .foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-  .foot .left { display: flex; flex-direction: column; gap: 8px; }
-  .foot .left .mono { color: var(--faint); }
-  .foot-links { display: flex; gap: 26px; }
-  .foot-links a { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--body); transition: color .18s; }
+  footer { border-top: 1px solid var(--line); padding: 34px 0 52px; }
+  .foot { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+  .foot .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); }
+  .foot-links { display: flex; gap: 24px; }
+  .foot-links a { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--body); text-decoration: none; transition: color .18s; }
   .foot-links a:hover { color: var(--ink); }
-
   :focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
-
-  /* reveal */
-  [data-rise] { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
-  [data-rise].in { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce){
-    html { scroll-behavior: auto; }
-    [data-rise] { opacity: 1; transform: none; transition: none; }
-  }
 </style>
 </head>
 <body>
 
   <header>
-    <div class="nav bound">
-      <a class="brand" href="#top" aria-label="Nadir Apps">
+    <div class="nav">
+      <a class="brand" href="index.html" aria-label="Nadir Apps">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
           <rect x="3" y="3" width="18" height="18" rx="5"/>
           <path d="M8 16.5V7.5L16 16.5V7.5"/>
         </svg>
         <b>Nadir Apps</b>
       </a>
-      <nav>
-        <a class="hide-sm" href="#work">Work</a>
-        <a class="hide-sm" href="privacy.html">Privacy</a>
-        <a class="hide-sm" href="terms.html">Terms</a>
-        <a href="mailto:nadoappsupport@gmail.com">Contact</a>
-      </nav>
+      <a class="back" href="index.html">← Back</a>
     </div>
   </header>
 
-  <main id="top">
+  <main class="doc bound">
+    <span class="eyebrow">Privacy Policy</span>
+    <h1>Privacy Policy for HeyBaby</h1>
+    <p class="updated">Last Updated: February 25, 2026</p>
 
-    <section class="hero bound">
-      <span class="tag"><span class="dot"></span><span class="mono">Independent app studio</span></span>
-      <h1>We build mobile apps, <em>independently.</em></h1>
-      <p class="lede">Nadir Apps is a small studio designing and shipping original consumer apps for iOS and Android.</p>
-      <div class="actions">
-        <a class="btn btn-solid" href="mailto:nadoappsupport@gmail.com">Get in touch <span class="arr">→</span></a>
-        <a class="btn btn-line" href="#work">How we work</a>
-      </div>
+    <p>This privacy policy applies to the HeyBaby application (hereby referred to as “Application”) for mobile devices, created by Nadir Toprak (hereby referred to as “Service Provider”). The Application is provided as a Freemium service and is intended for use “AS IS”.</p>
 
-      <dl class="meta" data-rise>
-        <div><dt>Platforms</dt><dd>iOS &amp; Android</dd></div>
-        <div><dt>Discipline</dt><dd>Design &amp; Build</dd></div>
-        <div><dt>Focus</dt><dd>Consumer apps</dd></div>
-        <div><dt>Model</dt><dd>In-house</dd></div>
-      </dl>
-    </section>
+    <h2>1. Information Collection and Use</h2>
+    <p>The Application collects information when you download and use it. This includes:</p>
+    <ul>
+      <li><strong>Device Information:</strong> IP address, operating system, and app usage statistics (time spent, pages visited).</li>
+      <li><strong>User-Provided Content:</strong> To provide core AI features, the Service Provider requires access to your Email and User-Selected Media (Photos, Images, and Videos).</li>
+      <li><strong>Text Prompts:</strong> The written descriptions you provide to guide the AI generation process.</li>
+    </ul>
 
-    <section id="work" class="sec bound">
-      <div class="sec-head" data-rise>
-        <span class="mono">01 — How we work</span>
-        <div>
-          <h2>From the first sketch to a shipped product — and every release after.</h2>
-          <p>We keep teams small and the surface area focused, so each app stays sharp instead of sprawling.</p>
-        </div>
-      </div>
+    <h2>2. AI Data Processing and Third-Party Sharing</h2>
+    <p>To provide our AI video and art generation features, the Application transmits user-provided content to third-party AI infrastructure providers.</p>
 
-      <div class="rows">
-        <div class="row" data-rise>
-          <span class="num">/01</span>
-          <span class="t">Design</span>
-          <span class="d">Product and interface design, from concept and flows to the final pixels.</span>
-        </div>
-        <div class="row" data-rise>
-          <span class="num">/02</span>
-          <span class="t">Build</span>
-          <span class="d">Native iOS and Android development with a backend that holds up at scale.</span>
-        </div>
-        <div class="row" data-rise>
-          <span class="num">/03</span>
-          <span class="t">Release</span>
-          <span class="d">Shipping to the App Store and Google Play, then iterating on what we learn.</span>
-        </div>
-      </div>
-    </section>
+    <h3>A. What Data is Sent</h3>
+    <ul>
+      <li>User-selected photos</li>
+      <li>Video clips</li>
+      <li>Text prompts</li>
+    </ul>
 
-    <section class="contact bound" id="contact">
-      <span class="mono">02 — Contact</span>
-      <a class="mailto" href="mailto:nadoappsupport@gmail.com">nadoappsupport@gmail.com</a>
-      <p class="note">For app support, feedback, or anything else — write to us and we'll get back to you.</p>
-    </section>
+    <h3>B. Who the Data is Sent To</h3>
+    <p>These providers include, but are not limited to:</p>
+    <ul>
+      <li>OpenAI (Sora, GPT Image)</li>
+      <li>Google (Veo series, Imagen series)</li>
+      <li>Luma AI, Pika Labs, Runway</li>
+      <li>Black Forest Labs (Flux series)</li>
+      <li>Kuaishou (Kling series)</li>
+      <li>ByteDance (Seedance series)</li>
+      <li>Alibaba</li>
+      <li>MiniMax</li>
+      <li>Tencent (Hunyuan)</li>
+      <li>fal.ai and Replicate (Infrastructure API connectors)</li>
+      <li>ShengShu Technology (Vidu)</li>
+      <li>Ideogram</li>
+      <li>Higgsfield</li>
+      <li>PixVerse</li>
+    </ul>
+
+    <h3>C. Purpose and Protection</h3>
+    <p>Data is transmitted solely to generate the requested AI content. These providers are contractually or legally prohibited from using your personal media for their own independent purposes. We do not use your personal data to train third-party AI models without your explicit consent.</p>
+
+    <h2>3. Face Data Policy</h2>
+    <p>The Application may process photos or videos containing faces to apply specific artistic styles or face-swap effects.</p>
+    <ul>
+      <li><strong>No Biometric Identification:</strong> We do not use face data to identify, authenticate, or create biometric profiles of users.</li>
+      <li><strong>Processing &amp; Retention:</strong> Face data is processed on-the-fly by AI providers. We do not store face data beyond the time required to generate output. Partners must delete such data after processing (typically within 24 hours).</li>
+    </ul>
+
+    <h2>4. Third-Party Access for Analytics and Operations</h2>
+    <p>The Application uses third-party services for analytics, monetization, and stability:</p>
+    <ul>
+      <li><strong>Infrastructure:</strong> Google Play Services, Firebase (Crashlytics &amp; Analytics)</li>
+      <li><strong>Monetization:</strong> AdMob, AppLovin, Vungle, RevenueCat</li>
+      <li><strong>Engagement &amp; Analytics:</strong> Facebook SDK, Unity, OneSignal, Amplitude, Mixpanel</li>
+    </ul>
+
+    <h2>5. User Consent and Opt-Out Rights</h2>
+    <p>By using the AI generation features, you explicitly consent to the transmission of your media to AI providers.</p>
+    <ul>
+      <li><strong>Opt-Out:</strong> You can stop all data collection by uninstalling the Application.</li>
+      <li><strong>Data &amp; Account Deletion:</strong> You can delete your account and all associated data at any time using the “Delete Account” function within the Application, or by contacting us at <a href="mailto:nadoappsupport@gmail.com">nadoappsupport@gmail.com</a>.</li>
+    </ul>
+
+    <h2>6. Children’s Privacy</h2>
+    <p>The Application does not knowingly collect data from children under the age of 13. If such data is discovered, it will be deleted immediately.</p>
+
+    <h2>7. Contact Us</h2>
+    <p>If you have questions regarding privacy, please contact:</p>
+    <div class="contact-block">
+      <strong>Nadir Toprak</strong>
+      Email: <a href="mailto:nadoappsupport@gmail.com">nadoappsupport@gmail.com</a>
+    </div>
   </main>
 
   <footer class="bound">
     <div class="foot">
-      <div class="left">
-        <a class="brand" href="#top" aria-label="Nadir Apps">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="20" height="20">
-            <rect x="3" y="3" width="18" height="18" rx="5"/>
-            <path d="M8 16.5V7.5L16 16.5V7.5"/>
-          </svg>
-          <b style="font-family:var(--disp);font-weight:600;font-size:15px;">Nadir Apps</b>
-        </a>
-        <span class="mono">© <span id="year"></span> — All rights reserved</span>
-      </div>
+      <span class="mono">© <span id="year"></span> Nadir Apps</span>
       <div class="foot-links">
-        <a href="privacy.html">Privacy</a>
+        <a href="index.html">Home</a>
         <a href="terms.html">Terms</a>
         <a href="mailto:nadoappsupport@gmail.com">Email</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    const io = new IntersectionObserver((es) => {
-      es.forEach((e, i) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-    }, { threshold: 0.15 });
-    document.querySelectorAll("[data-rise]").forEach(el => io.observe(el));
-  </script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
