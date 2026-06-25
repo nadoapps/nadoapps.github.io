@@ -48,7 +48,7 @@
   h3 { font-size: 17px; font-weight: 500; margin: 24px 0 8px; color: var(--accent); }
   .updated { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
   p, li { color: var(--fg); }
-  ul { padding-left: 22px; }
+  ul, ol { padding-left: 22px; }
   li { margin-bottom: 8px; }
   strong { font-weight: 700; }
   a { color: var(--accent); }
@@ -73,7 +73,7 @@
 
   <p class="eyebrow">Privacy Policy</p>
   <h1>Privacy Policy for HeyBaby</h1>
-  <p class="updated">Last Updated: June 24, 2026</p>
+  <p class="updated">Last Updated: June 26, 2026</p>
 
   <p class="intro">This privacy policy applies to the HeyBaby application ("Application") for mobile devices, created by Nadir Toprak ("Service Provider"). The Application is provided as a Freemium service and is intended for use "AS IS".</p>
 
@@ -81,31 +81,33 @@
   <p>The Application collects information when you download and use it. This includes:</p>
   <ul>
     <li><strong>Device Information:</strong> IP address, operating system, and app usage statistics (time spent, pages visited).</li>
-    <li><strong>User-Provided Content:</strong> To provide its core AI feature, the Service Provider requires access to your Email and User-Selected Media (Photos).</li>
+    <li><strong>User-Provided Content:</strong> To provide its core AI feature, the Service Provider requires access to your Email and User-Selected Media (the parent photos you choose).</li>
   </ul>
 
   <h2>2. AI Data Processing and Third-Party Sharing</h2>
-  <p>To provide our AI baby-image generation feature, the Application transmits user-provided photos to third-party AI infrastructure providers. This transmission only occurs after you grant explicit in-app consent.</p>
+  <p>The core feature of HeyBaby generates an AI image of a predicted baby from the <strong>mother's and father's photos</strong> you provide. To do this, the Application transmits these photos to third-party AI infrastructure providers. <strong>This transmission only occurs after you grant explicit in-app consent on the generation screen, before any photo leaves your device.</strong></p>
 
   <h3>A. What Data is Sent</h3>
   <ul>
-    <li>The parent photos you select within the app</li>
+    <li>The parent photos (mother and father) you select within the app. No other personal data is attached to these photos.</li>
   </ul>
 
-  <h3>B. Who the Data is Sent To</h3>
-  <ul>
-    <li><strong>fal.ai, Inc.</strong> — AI processing infrastructure</li>
-    <li><strong>Google LLC</strong> — Gemini image generation model</li>
-  </ul>
+  <h3>B. Who the Data is Sent To, and How</h3>
+  <p>The photos follow this exact path:</p>
+  <ol>
+    <li><strong>fal.ai, Inc.</strong> (United States) &mdash; receives the photos as the AI processing/infrastructure layer and routes them to the image-generation model.</li>
+    <li><strong>Google LLC</strong> (United States) &mdash; the photos are processed by Google's <strong>Gemini</strong> image-generation model, which produces the AI baby image.</li>
+  </ol>
+  <p>The generated image is then returned to your device through the same path.</p>
 
   <h3>C. Purpose and Protection</h3>
-  <p>Data is transmitted solely to generate the requested AI image. These providers are contractually or legally prohibited from using your personal media for their own independent purposes. We do not use your personal data to train third-party AI models without your explicit consent.</p>
+  <p>The photos are transmitted <strong>solely</strong> to generate the requested AI baby image. Both fal.ai and Google are bound by their respective data-processing terms, which provide protections equivalent to those described in this policy and prohibit using your personal media for their own independent purposes. We do not use your personal data, and do not permit these providers to use it, to train AI models without your explicit consent.</p>
 
   <h2>3. Face Data Policy</h2>
   <p>The Application processes the parent photos you provide to generate an AI image of a predicted child. Faces in these photos are processed solely for that purpose.</p>
   <ul>
     <li><strong>No Biometric Identification:</strong> We do not use face data to identify, authenticate, or create biometric profiles of users.</li>
-    <li><strong>Processing &amp; Retention:</strong> Face data is processed on-the-fly by AI providers. We do not store face data beyond the time required to generate output. Partners must delete such data after processing (typically within 12 hours).</li>
+    <li><strong>Processing &amp; Retention:</strong> Face data is processed on-the-fly by the AI providers named in Section 2. We do not store face data beyond the time required to generate output. Partners delete such data after processing (typically within 12 hours).</li>
   </ul>
 
   <h2>4. Third-Party Access for Analytics and Operations</h2>
@@ -116,9 +118,9 @@
   </ul>
 
   <h2>5. User Consent and Opt-Out Rights</h2>
-  <p>Before any photo is sent to an AI provider, the Application presents an in-app disclosure identifying what data is sent and to whom, and requires your explicit agreement to proceed.</p>
+  <p>Before any photo is sent to the AI providers named in Section 2, the Application presents an in-app disclosure that identifies (a) exactly what data is sent, and (b) the specific third parties it is sent to (fal.ai and Google/Gemini), and requires your explicit, affirmative agreement to proceed. No photo is transmitted unless you actively consent.</p>
   <ul>
-    <li><strong>Opt-Out:</strong> You can stop all data collection by uninstalling the Application.</li>
+    <li><strong>Opt-Out:</strong> You can decline consent at the disclosure screen, or stop all data collection by uninstalling the Application.</li>
     <li><strong>Data &amp; Account Deletion:</strong> You can delete your account and all associated data at any time using the "Delete Account" function within the Application, or by contacting us at <a href="mailto:nadoappsupport@gmail.com">nadoappsupport@gmail.com</a>.</li>
   </ul>
 
